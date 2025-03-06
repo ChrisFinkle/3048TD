@@ -18,86 +18,171 @@ Dragons have two hit points. A cannonball or crossbow bolt does two damage. An a
 
 Swapping a brick resource tile "into" the castle at the top of the screen restores or adds one heart of health, up to a total of 15 hearts.
 
+The following is an initial proposed file structure for this game:
+
 draggy-towers-roguelite/
+
 ├── assets/
+
 │   ├── images/
+
 │   │   ├── resources/          # Base resources (trees, crystals, etc.)
+
 │   │   ├── units/              # Combat units (crossbows, cannons, etc.)
+
 │   │   │   ├── base/
+
 │   │   │   ├── bronze/
+
 │   │   │   ├── silver/
+
 │   │   │   └── gold/
+
 │   │   ├── enemies/            # Dragons and future enemy types
+
 │   │   ├── effects/            # Visual effects (projectiles, explosions)
+
 │   │   ├── ui/                 # UI elements
+
 │   │   └── background/         # Background elements
+
 │   ├── audio/
+
 │   │   ├── music/
+
 │   │   └── sfx/
+
 │   └── fonts/
+
 ├── src/
+
 │   ├── config/
+
 │   │   ├── game-config.js      # Phaser configuration
+
 │   │   └── resource-config.js  # Resource definitions and upgrade paths
+
 │   ├── scenes/
+
 │   │   ├── boot-scene.js
+
 │   │   ├── preload-scene.js
+
 │   │   ├── menu-scene.js
+
 │   │   ├── game-scene.js       # Main gameplay
+
 │   │   ├── night-scene.js      # Night battle phase
+
 │   │   ├── day-scene.js        # Day building phase
+
 │   │   └── meta-progression-scene.js
+
 │   ├── entities/
+
 │   │   ├── grid.js             # The game grid manager
+
 │   │   ├── cell.js             # Individual grid cells
+
 │   │   ├── resource.js         # Base resource class
+
 │   │   ├── resources/          # Specific resource types
+
 │   │   │   ├── tree.js
+
 │   │   │   ├── crystal.js
+
 │   │   │   ├── treasure.js
+
 │   │   │   ├── cannonball.js
+
 │   │   │   └── brick.js
+
 │   │   ├── unit.js             # Base unit class
+
 │   │   ├── units/              # Combat units
+
 │   │   │   ├── crossbow.js
+
 │   │   │   ├── cannon.js
+
 │   │   │   ├── treasure-chest.js
+
 │   │   │   ├── ice-wall.js
+
 │   │   │   └── tower.js
+
 │   │   ├── enemy.js            # Base enemy class
+
 │   │   ├── enemies/            # Enemy types
+
 │   │   │   └── dragon.js
+
 │   │   ├── projectile.js       # Base projectile class
+
 │   │   └── projectiles/        # Projectile types
+
 │   │       ├── arrow.js
+
 │   │       └── cannonball.js
+
 │   ├── managers/
+
 │   │   ├── input-manager.js    # Handle player inputs
+
 │   │   ├── spawn-manager.js    # Handle resource spawning
+
 │   │   ├── merge-manager.js    # Handle matching and merging
+
 │   │   ├── wave-manager.js     # Handle enemy waves
+
 │   │   ├── combat-manager.js   # Handle combat calculations
+
 │   │   ├── day-night-manager.js # Handle day/night cycle
+
 │   │   ├── move-manager.js     # Handle player moves and limits
+
 │   │   └── progression-manager.js # Handle meta-progression
+
 │   ├── systems/
+
 │   │   ├── upgrade-system.js   # Resource upgrade paths
+
 │   │   ├── meta-system.js      # Meta-progression unlocks
+
 │   │   ├── save-system.js      # Game saving/loading
+
 │   │   └── achievement-system.js
+
 │   ├── ui/
+
 │   │   ├── hud.js              # Heads-up display
+
 │   │   ├── day-night-indicator.js
+
 │   │   ├── move-counter.js
+
 │   │   ├── health-display.js
+
 │   │   └── menu.js             # Game menus
+
 │   ├── utils/
+
 │   │   ├── math-utils.js       # Math helper functions
+
 │   │   ├── animation-utils.js  # Animation helpers
+
 │   │   ├── grid-utils.js       # Grid manipulation helpers
+
 │   │   └── sound-utils.js      # Sound helpers
+
 │   └── main.js                 # Entry point
+
 ├── index.html
+
 ├── package.json
+
 ├── webpack.config.js
+
 └── README.md
+
