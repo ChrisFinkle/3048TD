@@ -2,6 +2,8 @@
 
 INITIAL DEVELOPMENT DESCRIPTION
 
+This game is intended to grow into a roguelite that combines match-3, 2048, Tower Defense, and roguelite meta-progression elements.
+
 On a turn, players can swap the contents of any two adjacent squares in a 7x5 grid. Each square in the grid is always occupied by a resource. 
 
 Random resources spawn at the top of the playing field whenever there is an empty square, and move down when squares below them are vacated. Only the basic resources (trees, crystals, treasures, cannonballs, bricks) can spawn.
@@ -20,7 +22,7 @@ Swapping a brick resource tile "into" the castle at the top of the screen restor
 
 The following is an initial proposed file structure for this game:
 
-draggy-towers-roguelite/
+3048TD/
 
 ├── assets/
 
